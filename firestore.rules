@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Messages collection - allow read for authenticated users, write for backend service account
+    match /messages/{messageId} {
+      allow read: if request.auth != null;
+      allow write: if true; // Allow backend service account to write
+    }
+  }
+}
