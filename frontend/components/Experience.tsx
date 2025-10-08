@@ -75,7 +75,12 @@ const Experience: React.FC = () => {
       className="py-20 relative"
     >
       <div className="container-custom">
-        <motion.div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
           <h2 className="section-title">Experience</h2>
           <p className="text-xl text-tertiary max-w-3xl mx-auto leading-relaxed">
             A journey through building scalable systems and leading technical
@@ -85,7 +90,12 @@ const Experience: React.FC = () => {
 
         <div className="max-w-4xl mx-auto">
           {/* Company Tabs */}
-          <motion.div className="flex flex-wrap gap-2 mb-8 justify-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+            className="flex flex-wrap gap-2 mb-8 justify-center"
+          >
             {experiences.map((exp, index) => (
               <motion.button
                 key={exp.id}

@@ -93,6 +93,17 @@ const Footer: React.FC = () => {
                 GitHub
               </motion.a>
             )}
+            {personalInfo.contact.upwork && (
+              <motion.a
+                whileHover={{ scale: 1.1, color: '#a855f7' }}
+                href={personalInfo.contact.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                Upwork
+              </motion.a>
+            )}
           </div>
 
           <div className="text-tertiary text-sm">

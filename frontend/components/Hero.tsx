@@ -215,6 +215,16 @@ const Hero: React.FC = () => {
               >
                 Call
               </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={personalInfo?.contact?.upwork || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                Upwork
+              </motion.a>
             </motion.div>
 
             {/* Quick Info */}

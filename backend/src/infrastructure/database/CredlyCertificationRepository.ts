@@ -66,7 +66,7 @@ export class CredlyCertificationRepository implements ICertificationRepository {
       badge.badge_template.name,
       issuerName,
       badge.issued_at_date,
-      badge.badge_template.url,
+      `https://www.credly.com/badges/${badge.id}/public_url`,
       badge.image_url,
       badge.badge_template.description || undefined
     );

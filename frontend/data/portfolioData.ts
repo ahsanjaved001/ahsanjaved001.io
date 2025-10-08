@@ -13,6 +13,7 @@ export const personalInfo: PersonalInfo = {
     phone: '+92 311 7150512',
     linkedin: 'https://www.linkedin.com/in/ahsanjvd001/',
     github: 'https://github.com/ahsanjaved001',
+    upwork: 'https://www.upwork.com/freelancers/ahsanjaved001',
     location: 'Faisalabad, Pakistan',
   },
 };

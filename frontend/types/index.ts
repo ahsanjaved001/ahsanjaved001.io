@@ -53,6 +53,7 @@ export interface ContactInfo {
   phone: string;
   linkedin: string;
   github?: string;
+  upwork?: string;
   location: string;
 }
 

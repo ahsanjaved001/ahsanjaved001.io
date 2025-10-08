@@ -77,7 +77,12 @@ const Certifications: React.FC = () => {
       className="py-20 relative"
     >
       <div className="container-custom">
-        <motion.div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
           <h2 className="section-title">Certifications</h2>
           <p className="text-xl text-tertiary max-w-3xl mx-auto leading-relaxed">
             Professional certifications that validate my expertise in modern
@@ -87,10 +92,18 @@ const Certifications: React.FC = () => {
 
         {/* Certifications Grid */}
         {certifications.length > 0 ? (
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map(cert => (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {certifications.map((cert, index) => (
               <motion.div
                 key={cert.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 className="card p-6 text-center group cursor-pointer"
@@ -131,7 +144,12 @@ const Certifications: React.FC = () => {
             ))}
           </motion.div>
         ) : (
-          <motion.div className="text-center py-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+            className="text-center py-12"
+          >
             <div className="card p-8 max-w-md mx-auto">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-500/20 to-primary-500/20 border-2 border-purple-500/30 flex items-center justify-center">
                 <svg
