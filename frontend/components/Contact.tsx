@@ -175,21 +175,21 @@ const Contact: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 px-2">
           {/* Contact Information */}
           <motion.div variants={itemVariants} className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-4">
+              <h3 className="text-xl md:text-2xl font-bold text-primary mb-4">
                 Let's Connect
               </h3>
-              <p className="text-tertiary mb-8">
+              <p className="text-tertiary mb-6 md:mb-8 text-sm md:text-base leading-relaxed">
                 I'm always interested in new opportunities and exciting
                 projects. Whether you have a question or just want to say hi,
                 I'll try my best to get back to you!
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {personalInfo ? (
                 contactInfo.map(contact => (
                   <motion.a
@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
                     variants={itemVariants}
                     whileHover={{ scale: 1.02, x: 10 }}
                     whileTap={{ scale: 0.98 }}
-                    className="card p-4 cursor-pointer group block no-underline"
+                    className="card p-3 md:p-4 cursor-pointer group block no-underline"
                     onClick={e => {
                       if (contact.label === 'Location') {
                         e.preventDefault();
@@ -206,19 +206,19 @@ const Contact: React.FC = () => {
                       }
                     }}
                   >
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-3 md:space-x-4">
                       <motion.div
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}
-                        className="text-2xl"
+                        className="text-xl md:text-2xl"
                       >
                         {contact.icon}
                       </motion.div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-primary group-hover:text-purple-300 transition-colors duration-300">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-primary group-hover:text-purple-300 transition-colors duration-300 text-sm md:text-base">
                           {contact.label}
                         </h4>
-                        <p className="text-tertiary group-hover:text-secondary transition-colors duration-300">
+                        <p className="text-tertiary group-hover:text-secondary transition-colors duration-300 text-xs md:text-sm break-words">
                           {contact.value}
                         </p>
                       </div>
@@ -259,80 +259,21 @@ const Contact: React.FC = () => {
                 </div>
               )}
             </div>
-
-            {/* Social Links */}
-            <motion.div variants={itemVariants} className="pt-6">
-              <h4 className="text-lg font-semibold text-primary mb-4">
-                Follow Me
-              </h4>
-              <div className="flex space-x-4">
-                <motion.a
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  href="https://www.linkedin.com/in/ahsanjvd001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-card hover:bg-blue-500/20 flex items-center justify-center text-primary hover:text-blue-400 transition-all duration-300"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  href="https://github.com/ahsanjaved001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-card hover:bg-gray-500/20 flex items-center justify-center text-primary hover:text-gray-400 transition-all duration-300"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  href="https://www.upwork.com/freelancers/ahsanjaved001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-card hover:bg-green-500/20 flex items-center justify-center text-primary hover:text-green-400 transition-all duration-300"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703 0 1.491-1.211 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.284 5.284 5.284 2.913 0 5.283-2.37 5.283-5.284v-1.205c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-                  </svg>
-                </motion.a>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold text-primary mb-6">
+            <div className="card p-4 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6">
                 Send a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-primary mb-2"
+                      className="block text-sm font-medium text-primary mb-1 md:mb-2"
                     >
                       Name *
                     </label>
@@ -343,7 +284,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
                       placeholder="Your name"
                     />
                   </div>
@@ -351,7 +292,7 @@ const Contact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-primary mb-2"
+                      className="block text-sm font-medium text-primary mb-1 md:mb-2"
                     >
                       Email *
                     </label>
@@ -362,7 +303,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -371,7 +312,7 @@ const Contact: React.FC = () => {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-primary mb-2"
+                    className="block text-sm font-medium text-primary mb-1 md:mb-2"
                   >
                     Subject
                   </label>
@@ -381,7 +322,7 @@ const Contact: React.FC = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -389,7 +330,7 @@ const Contact: React.FC = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-primary mb-2"
+                    className="block text-sm font-medium text-primary mb-1 md:mb-2"
                   >
                     Message *
                   </label>
@@ -399,8 +340,8 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
+                    rows={4}
+                    className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-card border border-theme text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none text-sm md:text-base"
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </div>
@@ -410,11 +351,11 @@ const Contact: React.FC = () => {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed py-2 md:py-3 text-sm md:text-base"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center space-x-2">
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 md:h-5 md:w-5 border-b-2 border-white"></div>
                       <span>Sending...</span>
                     </div>
                   ) : (
@@ -422,6 +363,66 @@ const Contact: React.FC = () => {
                   )}
                 </motion.button>
               </form>
+            </div>
+          </motion.div>
+        </div>
+        <div className="flex justify-center mt-12">
+          {/* Social Links */}
+          <motion.div variants={itemVariants} className="pt-4 md:pt-6">
+            <h4 className="text-base md:text-lg font-semibold text-primary mb-3 md:mb-4 text-center">
+              Follow Me
+            </h4>
+            <div className="flex justify-center space-x-3 md:space-x-4">
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://www.linkedin.com/in/ahsanjvd001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-card hover:bg-blue-500/20 flex items-center justify-center text-primary hover:text-blue-400 transition-all duration-300"
+              >
+                <svg
+                  className="w-5 h-5 md:w-6 md:h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://github.com/ahsanjaved001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-card hover:bg-gray-500/20 flex items-center justify-center text-primary hover:text-gray-400 transition-all duration-300"
+              >
+                <svg
+                  className="w-5 h-5 md:w-6 md:h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://www.upwork.com/freelancers/ahsanjaved001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-card hover:bg-green-500/20 flex items-center justify-center text-primary hover:text-green-400 transition-all duration-300"
+              >
+                <svg
+                  className="w-5 h-5 md:w-6 md:h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703 0 1.491-1.211 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.284 5.284 5.284 2.913 0 5.283-2.37 5.283-5.284v-1.205c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
+                </svg>
+              </motion.a>
             </div>
           </motion.div>
         </div>

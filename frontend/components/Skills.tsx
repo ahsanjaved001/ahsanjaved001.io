@@ -69,7 +69,7 @@ const Skills: React.FC = () => {
         {/* Category Filter */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap gap-3 justify-center mb-12"
+          className="flex flex-wrap gap-3 justify-center mb-12 px-2"
         >
           {skillCategories.map(category => (
             <motion.button
@@ -92,7 +92,7 @@ const Skills: React.FC = () => {
         {/* Skills Grid */}
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-2"
         >
           <AnimatePresence>
             {filteredSkills.map(skill => (

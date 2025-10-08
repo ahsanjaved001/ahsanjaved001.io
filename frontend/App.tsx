@@ -30,13 +30,13 @@ function App() {
           <main>
             <Hero />
             <About />
-            <Experience />
-            <Skills />
             <Suspense fallback={<ComponentLoader />}>
               <ErrorBoundary>
                 <Certifications />
               </ErrorBoundary>
             </Suspense>
+            <Experience />
+            <Skills />
             <Suspense fallback={<ComponentLoader />}>
               <ErrorBoundary>
                 <Contact />

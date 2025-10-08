@@ -73,7 +73,7 @@ const About: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center px-2">
           {/* Left Column - Image/Visual */}
           <motion.div variants={itemVariants} className="relative">
             <div className="glass-effect rounded-2xl p-8 text-center">
@@ -152,7 +152,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Skills Preview */}
-        <motion.div variants={itemVariants} className="mt-16 text-center">
+        <motion.div variants={itemVariants} className="mt-16 text-center px-2">
           <h3 className="text-2xl font-bold text-primary mb-8">
             Core Expertise
           </h3>

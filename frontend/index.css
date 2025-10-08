@@ -176,7 +176,29 @@
 
   /* Container */
   .container-custom {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-6 sm:px-2 lg:px-8;
+  }
+
+  /* Mobile-specific container improvements */
+  @media (max-width: 640px) {
+    .container-custom {
+      @apply px-2;
+    }
+
+    /* Better text alignment on mobile */
+    .text-center-mobile {
+      @apply text-center;
+    }
+
+    /* Improved card spacing on mobile */
+    .card {
+      @apply mx-2;
+    }
+
+    /* Better form spacing on mobile */
+    .form-mobile {
+      @apply px-4;
+    }
   }
 
   /* Theme-aware text colors */

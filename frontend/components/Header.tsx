@@ -58,7 +58,9 @@ const Header: React.FC = () => {
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-primary-500 flex items-center justify-center">
               <span className="text-white font-bold text-lg">AJ</span>
             </div>
-            <span className="text-xl font-bold text-primary">Ahsan Javed</span>
+            <span className="text-lg sm:text-xl font-bold text-primary">
+              Ahsan Javed
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}

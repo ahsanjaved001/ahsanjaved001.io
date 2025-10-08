@@ -146,9 +146,12 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center px-2">
           {/* Left Column - Text Content */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div
+            variants={itemVariants}
+            className="space-y-8 text-center lg:text-left"
+          >
             <div className="space-y-4">
               <motion.h1
                 variants={itemVariants}
@@ -179,7 +182,7 @@ const Hero: React.FC = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-tertiary leading-relaxed max-w-2xl"
+              className="text-lg text-tertiary leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               {personalInfo?.description || 'Loading...'}
             </motion.p>
@@ -187,7 +190,7 @@ const Hero: React.FC = () => {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-4 justify-center lg:justify-start"
             >
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -230,19 +233,19 @@ const Hero: React.FC = () => {
             {/* Quick Info */}
             <motion.div
               variants={itemVariants}
-              className="space-y-2 text-muted"
+              className="space-y-2 text-muted text-center lg:text-left"
             >
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center lg:justify-start space-x-2">
                 <span>📍</span>
                 <span>{personalInfo?.location || 'Loading...'}</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center lg:justify-start space-x-2">
                 <span>💼</span>
                 <span>
                   Currently: {personalInfo?.currentRole || 'Loading...'}
                 </span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center lg:justify-start space-x-2">
                 <span>🎯</span>
                 <span>
                   Specializing in backend architecture, microservices, and
